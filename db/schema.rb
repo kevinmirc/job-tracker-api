@@ -37,12 +37,10 @@ ActiveRecord::Schema.define(version: 20160217222803) do
   create_table "notes", force: :cascade do |t|
     t.text     "content"
     t.integer  "opportunity_id"
-    t.integer  "contact_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
-  add_index "notes", ["contact_id"], name: "index_notes_on_contact_id", using: :btree
   add_index "notes", ["opportunity_id"], name: "index_notes_on_opportunity_id", using: :btree
 
   create_table "opportunities", force: :cascade do |t|
@@ -55,6 +53,5 @@ ActiveRecord::Schema.define(version: 20160217222803) do
 
   add_foreign_key "contact_opportunities", "contacts"
   add_foreign_key "contact_opportunities", "opportunities"
-  add_foreign_key "notes", "contacts"
   add_foreign_key "notes", "opportunities"
 end
