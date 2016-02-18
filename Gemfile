@@ -30,3 +30,6 @@ gem 'devise'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+#for cross-domain Ajax
+gem 'rack-cors', :require => 'rack/cors'
