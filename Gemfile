@@ -13,7 +13,7 @@ gem 'active_model_serializers'
 
 gem 'devise'
 
-
+gem 'faker'
 
 
 # To use ActiveModel has_secure_password
