@@ -1,4 +1,6 @@
 class Api::V1::UsersController < ApplicationController
+  skip_before_action :authenticate!, only: [:create]
+
   def index
     render json: User.all
   end
@@ -24,7 +26,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
-    render json: user.update(user_params)
+    render json: user.update(account_update_params)
   end
 
   private
@@ -34,6 +36,10 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password_digest, :avatar)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar)
+  end
+
+  def account_update_params
+    params.require(:user).permit(:first_name, :last_name, :email, :avatar, :current_password, :password, :password_confirmation)
   end
 end
