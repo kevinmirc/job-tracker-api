@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   end
 
   def auth
-    
+
   end
 
   private
