@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
     user if user && user.authenticate(credentials[:password])
   end
 
+  def auth
+    
+  end
+
   private
 
   def verify_authentication_token

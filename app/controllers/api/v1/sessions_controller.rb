@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::V1::SessionsController < ApplicationController
   skip_before_action :authenticate!
   def create
     user = User.authenticate(user_params)
@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :avatar, :password_digest)
+    params.require(:user).permit(:first_name, :last_name, :email, :avatar, :password)
   end
 end
