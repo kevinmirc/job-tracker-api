@@ -15,6 +15,10 @@ gem 'devise'
 
 gem 'faker'
 
+#using paperclip for uploading image and attachment
+
+gem 'paperclip'
+
 
 # To use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'

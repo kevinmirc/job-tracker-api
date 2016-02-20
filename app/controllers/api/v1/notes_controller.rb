@@ -34,6 +34,6 @@ class Api::V1::NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:content, :opportunity_id)
+    params.require(:note).permit(:content, :opportunity_id, :attachment)
   end
 end
