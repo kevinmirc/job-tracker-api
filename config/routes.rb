@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :notes
       resources :opportunities
       resources :contacts
+      get "users/me", to: "users#me"
       resources :users
     end
   end
