@@ -7,10 +7,6 @@ class Api::V1::NotesController < ApplicationController
     render json: note
   end
 
-  # def new
-  #   render json: Note.new
-  # end
-
   def create
     render json: Note.create(note_params)
   end

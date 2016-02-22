@@ -7,10 +7,6 @@ class Api::V1::ContactsController < ApplicationController
     render json: contact
   end
 
-  def new
-    # render json: Contact.new
-  end
-
   def create
     render json: Contact.create(contact_params)
   end
@@ -34,6 +30,6 @@ class Api::V1::ContactsController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :phone, :opportunity_id)
+    params.require(:contact).permit(:name, :email, :phone)
   end
 end
