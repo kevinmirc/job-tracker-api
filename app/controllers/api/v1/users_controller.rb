@@ -10,6 +10,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def me
+    # binding.pry
     cu = {user: current_user}
     render json: cu
   end
@@ -35,6 +36,11 @@ class Api::V1::UsersController < ApplicationController
   end
 
   private
+
+  def current_user
+    # binding.pry
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
 
   def user
     User.find(params[:id])

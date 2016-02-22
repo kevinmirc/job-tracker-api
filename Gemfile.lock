@@ -45,6 +45,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.0)
     concurrent-ruby (1.0.0)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -64,6 +65,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.99)
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
@@ -78,6 +80,10 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (0.18.4)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.4)
     rack-cors (0.4.0)
     rack-test (0.6.3)
@@ -112,6 +118,7 @@ GEM
     rake (10.5.0)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
+    slop (3.6.0)
     spring (1.6.3)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -137,6 +144,7 @@ DEPENDENCIES
   faker
   paperclip
   pg
+  pry
   rack-cors
   rails (= 4.2.5)
   rails-api
