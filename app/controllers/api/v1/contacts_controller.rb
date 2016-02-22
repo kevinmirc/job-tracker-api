@@ -1,3 +1,5 @@
+require 'pry'
+
 class Api::V1::ContactsController < ApplicationController
   def index
     render json: Contact.all
@@ -12,7 +14,14 @@ class Api::V1::ContactsController < ApplicationController
   end
 
   def create
-    render json: Contact.create(contact_params)
+    opportunity_id = request.referrer.split("/").last.to_i
+    opp = Opportunity.find(opportunity_id)
+    @contact = Contact.create(contact_params)
+    @contact.opportunities << opp
+    @contact.save
+    # find the Opp with that id
+    # make the new contact, assocaite to that opp and save, then
+    render json: @contact
   end
 
   def destroy

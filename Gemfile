@@ -14,6 +14,7 @@ gem 'active_model_serializers'
 gem 'devise'
 
 gem 'faker'
+gem 'pry'
 
 #using paperclip for uploading image and attachment
 

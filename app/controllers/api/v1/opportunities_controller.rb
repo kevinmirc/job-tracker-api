@@ -4,6 +4,7 @@ class Api::V1::OpportunitiesController < ApplicationController
   end
 
   def show
+    binding.pry
     render json: opportunity
   end
 
