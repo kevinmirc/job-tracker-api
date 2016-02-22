@@ -3,13 +3,13 @@ class Api::V1::NotesController < ApplicationController
     render json: Note.all
   end
 
-  # def show
-  #   render json: note
-  # end
-
-  def new
-    # render json: Note.new
+  def show
+    render json: note
   end
+
+  # def new
+  #   render json: Note.new
+  # end
 
   def create
     render json: Note.create(note_params)
@@ -20,7 +20,7 @@ class Api::V1::NotesController < ApplicationController
   end
 
   def edit
-    render json: contact
+    render json: note
   end
 
   def update
