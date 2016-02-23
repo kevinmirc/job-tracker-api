@@ -18,11 +18,7 @@ class ApplicationController < ActionController::API
   end
 
   def render_unauthorized
-    render json: {errors: ['Bad Credentials'] }, status: 401
-  end
-
-  def current_user
-    authenticate_token
+    render json: {errors: ['Absolutely Terrible Credentials']  }, status: 401
   end
 
 end

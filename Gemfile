@@ -13,7 +13,14 @@ gem 'active_model_serializers'
 
 gem 'devise'
 
+gem 'faker'
+gem 'pry'
 
+#using paperclip for uploading image and attachment
+
+gem 'paperclip'
+
+gem 'pry'
 
 
 # To use ActiveModel has_secure_password
@@ -30,3 +37,6 @@ gem 'devise'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+#for cross-domain Ajax
+gem 'rack-cors', :require => 'rack/cors'
