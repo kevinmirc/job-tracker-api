@@ -21,7 +21,8 @@ class Api::V1::ContactsController < ApplicationController
   end
 
   def destroy
-    render json: contact.destroy
+    contact.destroy
+    render nothing: true
   end
 
   def edit
