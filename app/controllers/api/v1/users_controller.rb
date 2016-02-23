@@ -10,8 +10,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def me
-    cu = {user: current_user}
-    render json: cu
+    render json: current_user
   end
 
   # def new

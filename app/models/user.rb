@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 
   private
 
+  
+
   def verify_authentication_token
     if authentication_token.blank?
       self.authentication_token = generate_auth_token
