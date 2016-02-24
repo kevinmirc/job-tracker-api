@@ -1,10 +1,10 @@
 class Api::V1::OpportunitiesController < ApplicationController
   def index
-    render json: Opportunity.all
+    opp = Opportunity.all.where(user_id: current_user.id)
+    render json: opp
   end
 
   def show
-    binding.pry
     render json: opportunity
   end
 
@@ -13,7 +13,11 @@ class Api::V1::OpportunitiesController < ApplicationController
   end
 
   def create
-    render json: Opportunity.create(opportunity_params)
+    user = current_user.id
+    opportunity = Opportunity.create(opportunity_params)
+    opportunity.user_id = user
+    opportunity.save
+    render json: opportunity
   end
 
   def destroy
