@@ -1,6 +1,5 @@
 class Api::V1::OpportunitiesController < ApplicationController
   def index
-    # binding.pry
     opp = Opportunity.all.where(user_id: current_user.id)
     render json: opp
   end
@@ -19,7 +18,6 @@ class Api::V1::OpportunitiesController < ApplicationController
     opportunity.user_id = user
     opportunity.save
     render json: opportunity
-
   end
 
   def destroy
