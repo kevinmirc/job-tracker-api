@@ -8,7 +8,12 @@ class Api::V1::NotesController < ApplicationController
   end
 
   def create
-    render json: Note.create(note_params)
+    @note = Note.create(note_params)
+    uploader = AttachmentUploader.new(@note, :note)
+    uploader.store!(params[:note][:attachment])
+    @note.attachment = uploader.file
+    @note.save!
+    render json: @note
   end
 
   def destroy
