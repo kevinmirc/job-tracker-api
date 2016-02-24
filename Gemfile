@@ -16,13 +16,16 @@ gem 'devise'
 gem 'faker'
 gem 'pry'
 
+gem 'figaro'
+
 #using paperclip for uploading image and attachment
 
 gem 'paperclip'
 
 gem 'pry'
-
-
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'carrierwave-aws'
 # To use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
 
