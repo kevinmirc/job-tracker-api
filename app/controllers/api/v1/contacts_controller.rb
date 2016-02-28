@@ -1,6 +1,5 @@
-require 'pry'
-
 class Api::V1::ContactsController < ApplicationController
+
   def index
     render json: Contact.all
   end
@@ -22,7 +21,7 @@ class Api::V1::ContactsController < ApplicationController
 
   def destroy
     contact.destroy
-    render nothing: true
+    render json: true
   end
 
   def edit
