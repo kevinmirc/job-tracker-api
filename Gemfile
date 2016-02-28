@@ -14,9 +14,9 @@ gem 'active_model_serializers'
 gem 'devise'
 
 gem 'faker'
-gem 'pry'
 
 gem 'figaro'
+gem 'rails_12factor', group: :production
 
 #using paperclip for uploading image and attachment
 
